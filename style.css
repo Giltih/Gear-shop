@@ -44,3 +44,10 @@ body {
   margin: 0;
   text-align: center;
 }
+.price {
+  background-color: #ddd;
+  width: 50px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  text-align: center;
+}
