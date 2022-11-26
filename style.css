@@ -1,0 +1,42 @@
+input {
+  width: 190px;
+  height: 40px;
+  background-color: rgb(222, 180, 222);
+  margin-top: 10px;
+  margin-left: 8px;
+}
+
+.products {
+  display: flex;
+}
+
+.product {
+  width: 200px;
+  height: 200px;
+  background: #fff;
+  margin: 12px;
+  border-radius: 10px;
+}
+
+.product .name {
+  color: red;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 12px;
+  font-size: 18px;
+  padding: 8px;
+}
+
+.product img {
+  width: 100%;
+  height: calc(100% - 68px);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+body {
+  background-image: url('https://evolve-mma.com/wp-content/uploads/2019/03/BJJ-Kimura-800x450.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  text-align: center;
+}

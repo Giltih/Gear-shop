@@ -2,92 +2,21 @@
 
 <head>
   <title>Login Form</title>
-  <style>
-    input {
-      width: 190px;
-      height: 40px;
-      background-color: rgb(222, 180, 222);
-      margin-top: 10px;
-      margin-left: 8px;
-    }
-
-    .container {
-      width: 206px;
-      height: 170px;
-      background-color: rgb(149, 71, 149);
-      position: absolute;
-      margin: auto;
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-    }
-
-    .name {
-      background-color: rgb(175, 113, 234);
-      text-align: center;
-      position: relative;
-      font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    }
-
-    button {
-      background-color: rgb(190, 183, 183);
-      position: absolute;
-      left: 35%;
-    }
-
-    .banner {
-      position: relative;
-      left: 20%;
-    }
-
-    .banner img {
-      max-width: 120%;
-      background-size: 200px;
-      resize: 100px;
-    }
-
-    body {
-      background-image: url('https://evolve-mma.com/wp-content/uploads/2019/03/BJJ-Kimura-800x450.jpg');
-      background-repeat: no-repeat;
-      background-size: cover;
-      margin: 0;
-      text-align: center;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <header>
-    <h1 class="name">Jiu Jitsu Club</h1>
+  <header class="name">
+    <h1>Jiu Jitsu Club</h1>
+    <button onclick="logout()" class="logout-button" style="display: none;">logout</button>
   </header>
   <section class="banner">
   </section>
 
-  <div class="container">
-    <form onsubmit="LoginForm(event)">
-      <label for="email"></label>
-      <input type="email" id="email" placeholder="email" />
-      <br /><br />
-      <label for="password"></label>
-      <input type="password" id="password" placeholder="password" />
-      <br /><br />
-      <button type="submit">submit</button>
-    </form>
-  </div>
-  <script>
-    function LoginForm(e) {
-      const email = document.querySelector("#email");
-      const passWord = document.querySelector("#password");
-      e.preventDefault();
-      if (email.value == "gilad@gmail.com" && passWord.value == "gil") {
-        return console.log("HERE I SWEAR ");
-      } else {
-        console.log("wrong");
-      }
-    }
-  </script>
+  <div class="products"></div>
+
+  <script src="mock/products.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>
