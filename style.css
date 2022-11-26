@@ -11,7 +11,7 @@ input {
 }
 
 header {
-  background-color: #ddd;
+  background-color: rgb(181, 79, 79);
 }
 
 .product {
@@ -38,7 +38,7 @@ header {
 }
 
 body {
-  background-image: url('https://evolve-mma.com/wp-content/uploads/2019/03/BJJ-Kimura-800x450.jpg');
+  background-image: url("https://evolve-mma.com/wp-content/uploads/2019/03/BJJ-Kimura-800x450.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   margin: 0;
