@@ -33,7 +33,7 @@ function renderProducts(allProducts) {
     const image = createHtmlElement("img", "image", "src", productData.image);
     //create element for price
     const price = createHtmlElement(
-      "div",
+      "button",
       "price",
       "innerHTML",
       productData.price
@@ -56,3 +56,15 @@ function createHtmlElement(tagName, className, attributeName, value) {
   element[attributeName] = value;
   return element;
 }
+
+//create a cart with my products i add
+//create a button onclick for each div
+//add to the cart the prices
+//give option to cancel
+//add the sum numbers for check out
+//add the bjj white belt dis9count
+let sum = 0;
+document.querySelector(".innerHTML").addEventListener("click", function () {
+  sum = sum + price;
+  console.log(sum);
+});
