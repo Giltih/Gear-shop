@@ -15,7 +15,7 @@ header {
 }
 
 .product {
-  width: 200px;
+  width: 150px;
   height: 200px;
   background: #fff;
   margin: 12px;
@@ -50,4 +50,9 @@ body {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   text-align: center;
+}
+.cart {
+  background-color: rgb(170, 161, 161);
+  width: 100px;
+  height: 70 px;
 }
