@@ -29,36 +29,50 @@ function renderProducts(allProducts) {
       productData.description
     );
 
+    let sum = 0;
     // Create element for product image
     const image = createHtmlElement("img", "image", "src", productData.image);
     //create element for price
-    const btn = createHtmlElement(
-      "button",
-      "btn",
+    const price = createHtmlElement(
+      "div",
+      "price",
       "innerHTML",
       productData.price
     );
+    const btn = createHtmlElement(
+      "button",
+      "add-to-cart-butn",
+      "innerHTML",
+      "add"
+    );
+    const cartSum = createHtmlElement("div", "sumList", "innerHTML", itemSum());
+
     // Append all data elements to the element in line 26
     newProduct.appendChild(name);
     newProduct.appendChild(description);
     newProduct.appendChild(image);
+    newProduct.appendChild(price);
     newProduct.appendChild(btn);
+    // cart.appendChild(cart);
+
     // Append element in line 26 to main container (line 18)
     container.appendChild(newProduct);
+    const newDiv = document.createElement("li");
+    newDiv.innerHTML = productData.price;
+
+    btn.onclick = function () {
+      const cart = document.querySelector(".cart");
+      cart.appendChild(newDiv);
+      cart.appendChild(cartSum);
+    };
+    function itemSum() {
+      for (let i = 0; i < newDiv.length; i++) {
+        sum = sum + newDiv;
+        return sum;
+      }
+    }
   }
 }
-const btnAdd = document.querySelectorAll(".btn");
-btnAdd.addEventListener("click", function () {
-  document.querySelector("cart");
-  cart.appendChild(btnAdd);
-});
-
-function myCart() {
-  const cart = (document.createElement("div").className = "cart");
-  document.querySelector("body");
-  body.appendChild(cart);
-}
-myCart();
 // Generic method to create HTML element
 function createHtmlElement(tagName, className, attributeName, value) {
   const element = document.createElement(tagName);
@@ -66,15 +80,3 @@ function createHtmlElement(tagName, className, attributeName, value) {
   element[attributeName] = value;
   return element;
 }
-
-// let sum = 0;
-// document.querySelector(".innerHTML").addEventListener("click", function () {
-//   sum = sum + price;
-//   console.log(sum);
-// });
-//create a cart with my products i add
-//create a button onclick for each div
-//add to the cart the prices
-//give option to cancel
-//add the sum numbers for check out
-//add the bjj white belt dis9count

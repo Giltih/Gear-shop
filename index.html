@@ -1,22 +1,25 @@
 <html lang="en">
+  <head>
+    <title>Login Form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-  <title>Login Form</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+  <body>
+    <header class="name">
+      <h1>Jiu Jitsu Club Gal Test</h1>
+      <button onclick="logout()" class="logout-button" style="display: none">
+        logout
+      </button>
+    </header>
+    <section class="banner"></section>
 
-<body>
-  <header class="name">
-    <h1>Jiu Jitsu Club Gal Test</h1>
-    <button onclick="logout()" class="logout-button" style="display: none;">logout</button>
-  </header>
-  <section class="banner">
-  </section>
+    <div class="products"></div>
+    <div class="cart">
+      <h2>cart</h2>
+      <ol class="list"></ol>
+    </div>
 
-  <div class="products"></div>
-
-  <script src="mock/products.js"></script>
-  <script src="script.js"></script>
-</body>
-
+    <script src="mock/products.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>
