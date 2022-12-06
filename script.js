@@ -1,5 +1,7 @@
 renderProducts(products);
 
+const addedProducts = [];
+
 function renderProducts(allProducts) {
   // Get container to append products to
   const container = document.querySelector(".products");
@@ -55,20 +57,31 @@ function renderProducts(allProducts) {
 
     // Append element in line 26 to main container (line 18)
     container.appendChild(newProduct);
+    
     btn.onclick = function () {
       const itemPrice = document.createElement("li");
       itemPrice.innerHTML = productData.price;
 
       const cart = document.querySelector(".cart");
       cart.appendChild(itemPrice);
-      let sum = 0;
-      for (let i = 0; i < productData.price.length; i++) {
-        sum += parseInt(productData.price[i]);
-      }
-      const total = document.querySelector(".sumList");
-      total.innerHTML = sum;
+
+      onProductAdded(productData);
     };
   }
+}
+
+function onProductAdded (product) {
+  addedProducts.push(product);
+
+  let sum = 0;
+  
+  for (let index = 0; index < addedProducts.length; index++) {
+    const product = addedProducts[index];
+    sum += product.price;
+  }
+
+  const sumElement = document.querySelector('.sum')
+  sumElement.innerHTML = sum;
 }
 
 // Generic method to create HTML element
