@@ -54,21 +54,28 @@ body {
 }
 .cart {
   background-image: url("https://media.istockphoto.com/id/1206806317/vector/shopping-cart-icon-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=1RRQJs5NDhcB67necQn1WCpJX2YMfWZ4rYi1DFKlkNA=");
-  background-size: 130px;
-  position: relative;
+  background-size: 10px;
 
-  background-color: rgb(255, 255, 255);
-  font-size: 22px;
-  border-bottom: 1px solid #ddd;
-  margin-bottom: 12px;
-  color: rgb(196, 32, 32);
+  /* background-color: rgb(255, 255, 255); */
+  /* border-bottom: 1px solid #ddd; */
+  /* margin-bottom: 12px; */
 
   position: fixed;
-  left: 10px;
+  left: 20px;
   bottom: 10%;
-  width: 150px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   border-radius: 5px;
+}
+h2 {
+  font-size: 35px;
+  color: rgb(196, 32, 32);
+  text-align: center;
+
+  display: table;
+  margin: 0px auto 0px auto;
+  padding: 3px;
+  background-color: #edf5ef;
 }
 .add-to-cart-butn {
   border-bottom-left-radius: 3px;
@@ -79,9 +86,11 @@ body {
   height: 19px;
 }
 li {
+  background-color: aliceblue;
   list-style-position: outside;
   list-style-type: decimal;
   position: relative;
-  right: 40px;
+  text-align: left;
+
   color: rgb(184, 16, 16);
 }

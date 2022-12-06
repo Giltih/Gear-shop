@@ -29,7 +29,6 @@ function renderProducts(allProducts) {
       productData.description
     );
 
-    let sum = 0;
     // Create element for product image
     const image = createHtmlElement("img", "image", "src", productData.image);
     //create element for price
@@ -45,7 +44,6 @@ function renderProducts(allProducts) {
       "innerHTML",
       "add"
     );
-    const cartSum = createHtmlElement("div", "sumList", "innerHTML", itemSum());
 
     // Append all data elements to the element in line 26
     newProduct.appendChild(name);
@@ -57,22 +55,22 @@ function renderProducts(allProducts) {
 
     // Append element in line 26 to main container (line 18)
     container.appendChild(newProduct);
-    const newDiv = document.createElement("li");
-    newDiv.innerHTML = productData.price;
-
     btn.onclick = function () {
+      const itemPrice = document.createElement("li");
+      itemPrice.innerHTML = productData.price;
+
       const cart = document.querySelector(".cart");
-      cart.appendChild(newDiv);
-      cart.appendChild(cartSum);
-    };
-    function itemSum() {
-      for (let i = 0; i < newDiv.length; i++) {
-        sum = sum + newDiv;
-        return sum;
+      cart.appendChild(itemPrice);
+      let sum = 0;
+      for (let i = 0; i < productData.price.length; i++) {
+        sum += parseInt(productData.price[i]);
       }
-    }
+      const total = document.querySelector(".sumList");
+      total.innerHTML = sum;
+    };
   }
 }
+
 // Generic method to create HTML element
 function createHtmlElement(tagName, className, attributeName, value) {
   const element = document.createElement(tagName);
