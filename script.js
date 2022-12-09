@@ -46,6 +46,12 @@ function renderProducts(allProducts) {
       "innerHTML",
       "add"
     );
+    const btnRemove = createHtmlElement(
+      "button",
+      "removeProduct",
+      "innerHTML",
+      "Delete"
+    );
 
     // Append all data elements to the element in line 26
     newProduct.appendChild(name);
@@ -53,34 +59,41 @@ function renderProducts(allProducts) {
     newProduct.appendChild(image);
     newProduct.appendChild(price);
     newProduct.appendChild(btn);
+
     // cart.appendChild(cart);
 
     // Append element in line 26 to main container (line 18)
     container.appendChild(newProduct);
-    
+
     btn.onclick = function () {
       const itemPrice = document.createElement("li");
       itemPrice.innerHTML = productData.price;
 
       const cart = document.querySelector(".cart");
       cart.appendChild(itemPrice);
+      cart.appendChild(btnRemove);
+
+      const itemDiscript = document.createElement("li");
+      itemDiscript.classList.add("description");
+      itemDiscript.innerHTML = productData.description;
+      cart.appendChild(itemDiscript);
 
       onProductAdded(productData);
     };
   }
 }
 
-function onProductAdded (product) {
+function onProductAdded(product) {
   addedProducts.push(product);
 
   let sum = 0;
-  
+
   for (let index = 0; index < addedProducts.length; index++) {
     const product = addedProducts[index];
     sum += product.price;
   }
 
-  const sumElement = document.querySelector('.sum')
+  const sumElement = document.querySelector(".sum");
   sumElement.innerHTML = sum;
 }
 
@@ -91,3 +104,7 @@ function createHtmlElement(tagName, className, attributeName, value) {
   element[attributeName] = value;
   return element;
 }
+//add discription to price in cart
+// add a remove button for item in cart
+// remove item from cart
+//remove from sum

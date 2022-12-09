@@ -94,3 +94,6 @@ li {
 
   color: rgb(184, 16, 16);
 }
+.removeProduct {
+  position: relative;
+}
