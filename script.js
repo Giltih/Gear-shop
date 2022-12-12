@@ -2,6 +2,7 @@ renderProducts(products);
 
 const addedProducts = [];
 
+// let itemDiscript, itemPrice;
 function renderProducts(allProducts) {
   // Get container to append products to
   const container = document.querySelector(".products");
@@ -67,6 +68,7 @@ function renderProducts(allProducts) {
 
     btn.onclick = function () {
       const itemPrice = document.createElement("li");
+      itemPrice.classList.add("itemPrice");
       itemPrice.innerHTML = productData.price;
 
       const cart = document.querySelector(".cart");
@@ -80,31 +82,39 @@ function renderProducts(allProducts) {
 
       onProductAdded(productData);
     };
-  }
-}
 
-function onProductAdded(product) {
-  addedProducts.push(product);
+    btnRemove.onclick = function () {
+      const itemPrice = document.querySelector("li");
+      const itemDiscript = document.querySelector("li");
 
-  let sum = 0;
-
-  for (let index = 0; index < addedProducts.length; index++) {
-    const product = addedProducts[index];
-    sum += product.price;
+      itemPrice.remove();
+      itemDiscript.remove();
+ 
   }
 
-  const sumElement = document.querySelector(".sum");
-  sumElement.innerHTML = sum;
-}
+  function onProductAdded(product) {
+    addedProducts.push(product);
 
-// Generic method to create HTML element
-function createHtmlElement(tagName, className, attributeName, value) {
-  const element = document.createElement(tagName);
-  element.className = className;
-  element[attributeName] = value;
-  return element;
+    let sum = 0;
+
+    for (let index = 0; index < addedProducts.length; index++) {
+      const product = addedProducts[index];
+      sum += product.price;
+    }
+
+    const sumElement = document.querySelector(".sum");
+    sumElement.innerHTML = sum;
+  }
+
+  // Generic method to create HTML element
+  function createHtmlElement(tagName, className, attributeName, value) {
+    const element = document.createElement(tagName);
+    element.className = className;
+    element[attributeName] = value;
+    return element;
+  }
 }
 //add discription to price in cart
 // add a remove button for item in cart
 // remove item from cart
-//remove from sum
+// remove from sum
