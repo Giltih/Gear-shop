@@ -89,7 +89,7 @@ function renderProducts(allProducts) {
 
       itemPrice.remove();
       itemDiscript.remove();
- 
+    }
   }
 
   function onProductAdded(product) {
